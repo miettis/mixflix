@@ -58,7 +58,7 @@ export default defineConfig((ctx) => {
       // ignorePublicFolder: true,
       // minify: false,
       // polyfillModulePreload: true,
-      distDir: '../StreamBuddy.Web/wwwroot',
+      distDir: '../MixFlix.Web/wwwroot',
 
       // extendViteConf (viteConf) {},
       // viteVuePluginOptions: {},
@@ -214,7 +214,7 @@ export default defineConfig((ctx) => {
       builder: {
         // https://www.electron.build/configuration/configuration
 
-        appId: 'streambuddy.client',
+        appId: 'mixflix.client',
       },
     },
 

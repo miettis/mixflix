@@ -1,6 +1,6 @@
-# streambuddy.client (streambuddy.client)
+# mixflix.client (mixflix.client)
 
-StreamBuddy Client
+MixFlix Client
 
 ## Install the dependencies
 

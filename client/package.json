@@ -1,7 +1,7 @@
 {
-  "name": "streambuddy.client",
+  "name": "mixflix.client",
   "version": "0.0.1",
-  "description": "StreamBuddy Client",
+  "description": "MixFlix Client",
   "productName": "MixFlix",
   "author": "mikekoder <mkoderfi@gmail.com>",
   "type": "module",

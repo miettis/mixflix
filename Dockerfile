@@ -20,24 +20,24 @@ FROM build-tools AS build
 ARG BUILD_CONFIGURATION=Release
 
 WORKDIR /src
-COPY ["StreamBuddy.Web/StreamBuddy.Web.csproj", "StreamBuddy.Web/"]
-RUN dotnet restore "./StreamBuddy.Web/StreamBuddy.Web.csproj"
+COPY ["MixFlix.Web/MixFlix.Web.csproj", "MixFlix.Web/"]
+RUN dotnet restore "./MixFlix.Web/MixFlix.Web.csproj"
 COPY . .
 # build client
 WORKDIR "/src/client"
 RUN npm install
 RUN quasar build
 # build server
-WORKDIR "/src/StreamBuddy.Web"
-RUN dotnet build "./StreamBuddy.Web.csproj" -c $BUILD_CONFIGURATION -o /app/build
+WORKDIR "/src/MixFlix.Web"
+RUN dotnet build "./MixFlix.Web.csproj" -c $BUILD_CONFIGURATION -o /app/build
 
 # This stage is used to publish the service project to be copied to the final stage
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
-RUN dotnet publish "./StreamBuddy.Web.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
+RUN dotnet publish "./MixFlix.Web.csproj" -c $BUILD_CONFIGURATION -o /app/publish /p:UseAppHost=false
 
 # This stage is used in production or when running from VS in regular mode (Default when not using the Debug configuration)
 FROM base AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-ENTRYPOINT ["dotnet", "StreamBuddy.Web.dll"]
+ENTRYPOINT ["dotnet", "MixFlix.Web.dll"]
