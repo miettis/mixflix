@@ -1,0 +1,54 @@
+// app global css in SCSS form
+
+// MixFlix Brand Enhancement
+.q-header {
+  background: rgba(10, 10, 10, 0.95) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0, 216, 195, 0.1);
+}
+
+// Button hover effects with brand colors
+.q-btn--standard.q-btn--rectangle.bg-primary {
+  background: linear-gradient(90deg, #00d8c3, #9a00d8) !important;
+  border: none;
+}
+
+.q-btn--standard.q-btn--rectangle.bg-primary:hover {
+  background: linear-gradient(90deg, #9a00d8, #00d8c3) !important;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(0, 216, 195, 0.3);
+}
+
+// Card enhancements for dark theme
+.q-card {
+  background: #0a0a0a !important;
+  border: 1px solid rgba(0, 216, 195, 0.1);
+}
+
+.q-card:hover {
+  border-color: rgba(0, 216, 195, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 216, 195, 0.15);
+}
+
+// Brand text colors
+.text-mixflix-primary {
+  color: #00d8c3;
+}
+
+.text-mixflix-secondary {
+  color: #9a00d8;
+}
+
+// Accent elements
+.accent-border {
+  border-left: 3px solid #00d8c3;
+}
+
+// Gradient text effect
+.gradient-text {
+  background: linear-gradient(90deg, #00d8c3, #9a00d8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
